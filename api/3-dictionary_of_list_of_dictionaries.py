@@ -4,9 +4,9 @@ Python script that, using this REST API,
 records all tasks from all employees
 and exports them to a JSON file.
 """
+import json
 import requests
 import sys
-import json
 
 
 def fetch_all_employees_data():
