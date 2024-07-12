@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 Python script that, using this REST API, for a given employee ID,
-returns information about his/her TODO
+returns information about his/her TODO 
 list progress and exports it to a CSV file.
 """
 import csv
@@ -15,15 +15,16 @@ def fetch_employee_data(employee_id):
         user_response = requests.get(
             f'https://jsonplaceholder.typicode.com/users/{employee_id}'
         )
-        user_response.raise_for_status()
+        user_response.raise_for_status()  # Check if the request was successful
         user_data = user_response.json()
-        employee_name = user_data.get('name')
+        employee_name = user_data.get('username')  # Use 'username' instead of 'name'
+        print(f"DEBUG: Fetched employee username: {employee_name}")
 
         # Fetch employee's TODO list
         todos_response = requests.get(
             f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
         )
-        todos_response.raise_for_status()
+        todos_response.raise_for_status()  # Check if the request was successful
         todos_data = todos_response.json()
 
         # Write data to CSV file
