@@ -21,7 +21,7 @@ def fetch_employee_data(employee_id):
         todos_response = requests.get(
             f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
         )
-        todos_response.raise_for_status()  # Check if the request was successful
+        todos_response.raise_for_status()
         todos_data = todos_response.json()
 
         # Calculate TODO list progress
