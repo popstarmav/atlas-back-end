@@ -14,7 +14,7 @@ def fetch_employee_data(employee_id):
         user_response = requests.get(
             f'https://jsonplaceholder.typicode.com/users/{employee_id}'
         )
-        user_response.raise_for_status()  # Check if the request was successful
+        user_response.raise_for_status()
         user_data = user_response.json()
         employee_name = user_data.get('name')
 
@@ -22,7 +22,7 @@ def fetch_employee_data(employee_id):
         todos_response = requests.get(
             f'https://jsonplaceholder.typicode.com/todos?userId={employee_id}'
         )
-        todos_response.raise_for_status()  # Check if the request was successful
+        todos_response.raise_for_status()
         todos_data = todos_response.json()
 
         # Write data to CSV file
