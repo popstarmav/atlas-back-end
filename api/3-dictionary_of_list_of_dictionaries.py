@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Python script that, using this REST API, 
+Python script that, using this REST API,
 records all tasks from all employees
 and exports them to a JSON file.
 """
