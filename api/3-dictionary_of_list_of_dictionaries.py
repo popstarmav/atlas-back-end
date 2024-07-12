@@ -5,19 +5,24 @@ records all tasks from all employees
 and exports them to a JSON file.
 """
 import requests
+import sys
 import json
 
 
 def fetch_all_employees_data():
     try:
         # Fetch all users
-        users_response = requests.get('https://jsonplaceholder.typicode.com/users')
-        users_response.raise_for_status()  # Check if the request was successful
+        users_response = requests.get(
+            'https://jsonplaceholder.typicode.com/users'
+        )
+        users_response.raise_for_status()
         users_data = users_response.json()
 
         # Fetch all tasks
-        todos_response = requests.get('https://jsonplaceholder.typicode.com/todos')
-        todos_response.raise_for_status()  # Check if the request was successful
+        todos_response = requests.get(
+            'https://jsonplaceholder.typicode.com/todos'
+        )
+        todos_response.raise_for_status()
         todos_data = todos_response.json()
 
         # Organize tasks by user ID
